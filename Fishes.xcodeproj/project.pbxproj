@@ -19,6 +19,7 @@
 		E35047B5236FACE500067AA9 /* SaveEnergyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35047B4236FACE500067AA9 /* SaveEnergyChain.swift */; };
 		E35047B9236FC33900067AA9 /* HabilityStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35047B8236FC33900067AA9 /* HabilityStrategy.swift */; };
 		E35047BB236FC40200067AA9 /* FishBlastRocksHabilityDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35047BA236FC40200067AA9 /* FishBlastRocksHabilityDecorator.swift */; };
+		E3840A8A23703ADD005F91E5 /* CheapFirstStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3840A8923703ADD005F91E5 /* CheapFirstStrategy.swift */; };
 		E398FBD8236F197E00A2929C /* RushStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E398FBD7236F197E00A2929C /* RushStrategy.swift */; };
 		E398FBDA236F19B800A2929C /* LowEnergyStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E398FBD9236F19B800A2929C /* LowEnergyStrategy.swift */; };
 		E398FBDC236F1D5200A2929C /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E398FBDB236F1D5200A2929C /* Grid.swift */; };
@@ -56,6 +57,7 @@
 		E35047B4236FACE500067AA9 /* SaveEnergyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveEnergyChain.swift; sourceTree = "<group>"; };
 		E35047B8236FC33900067AA9 /* HabilityStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabilityStrategy.swift; sourceTree = "<group>"; };
 		E35047BA236FC40200067AA9 /* FishBlastRocksHabilityDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishBlastRocksHabilityDecorator.swift; sourceTree = "<group>"; };
+		E3840A8923703ADD005F91E5 /* CheapFirstStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapFirstStrategy.swift; sourceTree = "<group>"; };
 		E398FBD7236F197E00A2929C /* RushStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushStrategy.swift; sourceTree = "<group>"; };
 		E398FBD9236F19B800A2929C /* LowEnergyStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowEnergyStrategy.swift; sourceTree = "<group>"; };
 		E398FBDB236F1D5200A2929C /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				E398FBD7236F197E00A2929C /* RushStrategy.swift */,
 				E398FBD9236F19B800A2929C /* LowEnergyStrategy.swift */,
 				E35047B8236FC33900067AA9 /* HabilityStrategy.swift */,
+				E3840A8923703ADD005F91E5 /* CheapFirstStrategy.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				E334900D236F10E200DFFE7D /* main.swift in Sources */,
 				E35047B3236FAA5E00067AA9 /* FishEnergyPlusHabilityDecorator.swift in Sources */,
 				E34D5FA6236F293D00815DDA /* FishAvoidHabilityDecorator.swift in Sources */,
+				E3840A8A23703ADD005F91E5 /* CheapFirstStrategy.swift in Sources */,
 				E35047B1236F427F00067AA9 /* FishFowardHabilityDecorator.swift in Sources */,
 				E35047B9236FC33900067AA9 /* HabilityStrategy.swift in Sources */,
 				E34D5FA4236F284000815DDA /* FishHabilityDecorator.swift in Sources */,

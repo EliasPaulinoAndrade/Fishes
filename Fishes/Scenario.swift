@@ -11,13 +11,29 @@ import Foundation
 class Scenario: CustomStringConvertible {
     var grid: Grid
     
+    lazy var rushFish: FishProtocol = {
+        let rushFish = FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐠"))
+        rushFish.walkStrategy = RushStrategy(scenario: self, fish: rushFish)
+        
+        return rushFish
+    }()
+    
+    lazy var lowEnergyFish: FishProtocol = {
+        let lowEnergyFish = FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐡"))
+        lowEnergyFish.walkStrategy = LowEnergyStrategy(scenario: self, fish: lowEnergyFish)
+        
+        return lowEnergyFish
+    }()
+    
+    lazy var cheaperFirstFish: FishProtocol = {
+        let cheaperFirstFish = FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐟"))
+        cheaperFirstFish.walkStrategy = CheapFirstStrategy(scenario: self, fish: cheaperFirstFish)
+        
+        return cheaperFirstFish
+    }()
+    
     lazy var fishes: [FishProtocol] = {
-        return [
-            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐠")),
-            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐡")),
-            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐟")),
-            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐬"))
-        ]
+        return [rushFish, lowEnergyFish, cheaperFirstFish]
     }()
     
     var description: String {
@@ -57,11 +73,6 @@ class Scenario: CustomStringConvertible {
             
             let fish = self.fishes[strideElement.offset]
             
-            if strideElement.offset.isMultiple(of: 2) {
-                fish.walkStrategy = RushStrategy(scenario: self, fish: fish)
-            } else {
-                fish.walkStrategy = LowEnergyStrategy(scenario: self, fish: fish)
-            }
             self.grid.move(fish: fish, toPositionX: strideElement.element, positionY: self.grid.numberOfLines - 1)
         }
     }

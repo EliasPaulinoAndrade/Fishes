@@ -14,8 +14,8 @@ class LowEnergyStrategy: WalkingStrategy {
     
     var lowEnergyResponsabilityChain: WalkingResposabilityChain {
         
-        var spendAllEnergyChain = SaveEnergyChain<FishBlastRocksHabilityDecorator>(fish: self.fish, scenario: self.scenario, percentage: 0.2)
-        spendAllEnergyChain.nextChain = SaveEnergyChain<FishJumpHabilityDecorator>(fish: self.fish, scenario: self.scenario, percentage: 0.2)
+        var spendAllEnergyChain = SaveEnergyChain<FishBlastRocksHabilityDecorator>(fish: self.fish, scenario: self.scenario, percentage: 0.4)
+        spendAllEnergyChain.nextChain = SaveEnergyChain<FishJumpHabilityDecorator>(fish: self.fish, scenario: self.scenario, percentage: 0.4)
         spendAllEnergyChain.nextChain?.nextChain = SpendAllEnergyChain<FishFowardHabilityDecorator>(fish: self.fish, scenario: self.scenario)
         spendAllEnergyChain.nextChain?.nextChain?.nextChain = SpendAllEnergyChain<FishAvoidHabilityDecorator>(fish: self.fish, scenario: self.scenario)
 
