@@ -17,7 +17,7 @@ class FishAvoidHabilityDecorator: FishHabilityDecorator, HabilityStrategy {
             return false
         }
         
-        scenario.move(fish: fish, toPositionX: validAvoidPosition, positionY: positionY)
+        scenario.grid.move(fish: fish, toPositionX: validAvoidPosition, positionY: positionY)
         fish.energy -= energyCost
         return true
     }

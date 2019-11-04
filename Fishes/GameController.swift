@@ -19,7 +19,8 @@ class GameController {
     var possibleHabilities: [FishHabilityDecorator.Type] = [
         FishJumpHabilityDecorator.self,
         FishAvoidHabilityDecorator.self,
-        FishEnergyPlusHabilityDecorator.self
+        FishEnergyPlusHabilityDecorator.self,
+        FishBlastRocksHabilityDecorator.self,
     ]
     
     func startRacing() {

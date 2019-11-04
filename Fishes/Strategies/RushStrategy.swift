@@ -13,9 +13,10 @@ class RushStrategy: WalkingStrategy {
     weak var fish: FishProtocol?
     
     var rushResponsabilityChain: WalkingResposabilityChain {
-        var spendAllEnergyChain = SpendAllEnergyChain<FishJumpHabilityDecorator>(fish: self.fish, scenario: self.scenario)
-        spendAllEnergyChain.nextChain = SpendAllEnergyChain<FishFowardHabilityDecorator>(fish: self.fish, scenario: self.scenario)
-        spendAllEnergyChain.nextChain?.nextChain = SpendAllEnergyChain<FishAvoidHabilityDecorator>(fish: self.fish, scenario: self.scenario)
+        var spendAllEnergyChain = SpendAllEnergyChain<FishBlastRocksHabilityDecorator>(fish: self.fish, scenario: self.scenario)
+        spendAllEnergyChain.nextChain = SpendAllEnergyChain<FishJumpHabilityDecorator>(fish: self.fish, scenario: self.scenario)
+        spendAllEnergyChain.nextChain?.nextChain = SpendAllEnergyChain<FishFowardHabilityDecorator>(fish: self.fish, scenario: self.scenario)
+        spendAllEnergyChain.nextChain?.nextChain?.nextChain = SpendAllEnergyChain<FishAvoidHabilityDecorator>(fish: self.fish, scenario: self.scenario)
         
         return spendAllEnergyChain
     }

@@ -13,10 +13,10 @@ class Scenario: CustomStringConvertible {
     
     lazy var fishes: [FishProtocol] = {
         return [
-            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 100, identifier: "🐠")),
-            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 100, identifier: "🐡")),
-            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 100, identifier: "🐟")),
-            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 100, identifier: "🐬"))
+            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐠")),
+            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐡")),
+            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐟")),
+            FishFowardHabilityDecorator(decoratedFish: Fish(energy: 150, identifier: "🐬"))
         ]
     }()
     
@@ -44,15 +44,6 @@ class Scenario: CustomStringConvertible {
         placeFishs()
     }
     
-    func move(fish: FishProtocol, toPositionX positionX: Int, positionY: Int) {
-        if let fishPositionY = fish.positionY, let fishPositionX = fish.positionX {
-            self.grid.gridArray[fishPositionY][fishPositionX] = .empty
-        }
-        fish.positionX = positionX
-        fish.positionY = positionY
-        self.grid.gridArray[positionY][positionX] = .fish(fish)
-    }
-    
     private func placeFishs() {
         guard self.fishes.count <= self.grid.numberOfColumns, self.fishes.count != 0 else {
             fatalError("The number of fished mut fit on the grid")
@@ -71,7 +62,7 @@ class Scenario: CustomStringConvertible {
             } else {
                 fish.walkStrategy = LowEnergyStrategy(scenario: self, fish: fish)
             }
-            self.move(fish: fish, toPositionX: strideElement.element, positionY: self.grid.numberOfLines - 1)
+            self.grid.move(fish: fish, toPositionX: strideElement.element, positionY: self.grid.numberOfLines - 1)
         }
     }
     
